@@ -62,22 +62,15 @@ html, body {
 .locationItem:hover {
     background: rgba(255,255,255,0.15);
 }
-    #phoneBtn {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 9999;
-    background: rgba(0,0,0,0.75);
+  #phoneBtn {
+    display: block;
     color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
+    padding: 14px 12px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial, sans-serif;
-}
-    .pnlm-fullscreen-toggle-button {
-    top: 100px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
 }
 
 </style>
@@ -90,8 +83,8 @@ html, body {
 <button id="locationBtn" onclick="toggleMenu()">
 ☰ MENU PHÂN KHU
 </button>
-   <a id="phoneBtn" href="tel:0912326084">📞TƯ VẤN 0912 326 084</a>
 <div id="locationMenu">
+   <a id="phoneBtn" href="tel:0912326084">📞TƯ VẤN 0912 326 084</a>
    <div class="locationGroup">NHA MAU - ONSEN</div>
    <div class="locationItem" onclick="goTo('scene1')">NHA MAU</div>
    <div class="locationItem" onclick="goTo('scene2')">ONSEN VA RUNG PHUONG</div>
