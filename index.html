@@ -74,21 +74,32 @@ html, body {
 </button>
 
 <div id="locationMenu">
-    <div class="locationItem" onclick="goTo('scene1')">ECO BAZAAR</div>
-    <div class="locationItem" onclick="goTo('scene2')">MUA HA</div>
-    <div class="locationItem" onclick="goTo('scene3')">SKY RETREAT</div>
-    <div class="locationItem" onclick="goTo('scene4')">CONG VAO</div>
-    <div class="locationItem" onclick="goTo('scene5')">2 TOA CHUA BAN</div>
-    <div class="locationItem" onclick="goTo('scene6')">FOREST ONSEN</div>
-    <div class="locationItem" onclick="goTo('scene7')">MUA THU 1</div>
-    <div class="locationItem" onclick="goTo('scene8')">HO THIEN NGA</div>
-    <div class="locationItem" onclick="goTo('scene9')">BIET THU DAO</div>
-    <div class="locationItem" onclick="goTo('scene10')">MUA XUAN</div>
-    <div class="locationItem" onclick="goTo('scene11')">MUA THU 2</div>
-    <div class="locationItem" onclick="goTo('scene12')">MUA XUAN 1</div>
-    <div class="locationItem" onclick="goTo('scene13')">MUA THU 1</div>
-    <div class="locationItem" onclick="goTo('scene14')">SKY 1</div>
-    <div class="locationItem" onclick="goTo('scene15')">SKY 2</div>
+    <div class="locationItem" onclick="goTo('scene1')">NHA MAU</div>
+<div class="locationItem" onclick="goTo('scene2')">ONSEN VA RUNG PHUONG</div>
+<div class="locationItem" onclick="goTo('scene3')">MUA THU 1</div>
+<div class="locationItem" onclick="goTo('scene4')">MUA THU 2</div>
+<div class="locationItem" onclick="goTo('scene5')">MUA THU 3</div>
+<div class="locationItem" onclick="goTo('scene6')">GIUA MUA THU VS MUA HA</div>
+<div class="locationItem" onclick="goTo('scene7')">MUA HA 1</div>
+<div class="locationItem" onclick="goTo('scene8')">MUA HA 2</div>
+<div class="locationItem" onclick="goTo('scene9')">SKY TRUOC</div>
+<div class="locationItem" onclick="goTo('scene10')">SKY SAU</div>
+<div class="locationItem" onclick="goTo('scene11')">MUA XUAN 1</div>
+<div class="locationItem" onclick="goTo('scene12')">MUA XUAN 2</div>
+<div class="locationItem" onclick="goTo('scene13')">MUA XUAN 3</div>
+<div class="locationItem" onclick="goTo('scene14')">RUNG MAI</div>
+<div class="locationItem" onclick="goTo('scene15')">BT DAO 1</div>
+<div class="locationItem" onclick="goTo('scene16')">BT DAO 2</div>
+<div class="locationItem" onclick="goTo('scene17')">DAO VS RUNG</div>
+<div class="locationItem" onclick="goTo('scene18')">BT RUNG</div>
+<div class="locationItem" onclick="goTo('scene19')">HO THIEN NGA 1</div>
+<div class="locationItem" onclick="goTo('scene20')">HO THIEN NGA 2</div>
+<div class="locationItem" onclick="goTo('scene21')">HO THIEN NGA 3</div>
+<div class="locationItem" onclick="goTo('scene22')">2 TOA CHUA BAN</div>
+<div class="locationItem" onclick="goTo('scene23')">ECO BAZAAR 1</div>
+<div class="locationItem" onclick="goTo('scene24')">ECO BAZAAR 2</div>
+<div class="locationItem" onclick="goTo('scene25')">CONG VAO</div>
+<div class="locationItem" onclick="goTo('scene26')">ECO RETREAT VS THANH PHU</div>
 </div>
 
 <script>
@@ -103,95 +114,135 @@ const viewer = pannellum.viewer('panorama', {
 },
 
 "scenes": {
-
-"scene1": {
-    "title": "ECO BAZAAR",
-    "type": "equirectangular",
-    "panorama": "360-01.jpg"
-},
-
-"scene2": {
-    "title": "MUA HA",
-    "type": "equirectangular",
-    "panorama": "360-02.jpg"
-},
-
-"scene3": {
-    "title": "SKY RETREAT",
-    "type": "equirectangular",
-    "panorama": "360-03.jpg"
-},
-
-"scene4": {
-    "title": "CONG VAO",
-    "type": "equirectangular",
-    "panorama": "360-04.jpg"
-},
-
-"scene5": {
-    "title": "2 TOA CHUA BAN",
-    "type": "equirectangular",
-    "panorama": "360-05.jpg"
-},
-
-"scene6": {
-    "title": "FOREST ONSEN",
-    "type": "equirectangular",
-  "panorama": "360-06.jpg"
-},
-
-"scene7": {
-    "title": "MUA THU 1",
-    "type": "equirectangular",
-    "panorama": "360-07.jpg"
-},
-
-"scene8": {
-    "title": "HO THIEN NGA",
-    "type": "equirectangular",
-    "panorama": "360-08.jpg"
-},
-
-"scene9": {
-    "title": "BIET THU DAO",
-    "type": "equirectangular",
-    "panorama": "360-09.jpg"
-},
-
-"scene10": {
-    "title": "MUA XUAN",
-    "type": "equirectangular",
-    "panorama": "360-10.jpg"
-},
-
-"scene11": {
-    "title": "MUA THU 2",
-    "type": "equirectangular",
-    "panorama": "360-11.jpg"
-},
-
+    "scene1": {
+        "title": "NHA MAU",
+        "type": "equirectangular",
+        "panorama": "360-01.jpg"
+    },
+    "scene2": {
+        "title": "ONSEN VA RUNG PHUONG",
+        "type": "equirectangular",
+        "panorama": "360-02.jpg"
+    },
+    "scene3": {
+        "title": "MUA THU 1",
+        "type": "equirectangular",
+        "panorama": "360-03.jpg"
+    },
+    "scene4": {
+        "title": "MUA THU 2",
+        "type": "equirectangular",
+        "panorama": "360-04.jpg"
+    },
+    "scene5": {
+        "title": "MUA THU 3",
+        "type": "equirectangular",
+        "panorama": "360-05.jpg"
+    },
+    "scene6": {
+        "title": "GIUA MUA THU VS MUA HA",
+        "type": "equirectangular",
+        "panorama": "360-06.jpg"
+    },
+    "scene7": {
+        "title": "MUA HA 1",
+        "type": "equirectangular",
+        "panorama": "360-07.jpg"
+    },
+    "scene8": {
+        "title": "MUA HA 2",
+        "type": "equirectangular",
+        "panorama": "360-08.jpg"
+    },
+    "scene9": {
+        "title": "SKY TRUOC",
+        "type": "equirectangular",
+        "panorama": "360-09.jpg"
+    },
+    "scene10": {
+        "title": "SKY SAU",
+        "type": "equirectangular",
+        "panorama": "360-10.jpg"
+    },
+    "scene11": {
+        "title": "MUA XUAN 1",
+        "type": "equirectangular",
+        "panorama": "360-11.jpg"
+    },
     "scene12": {
-    "title": "MUA XUAN 1",
-    "type": "equirectangular",
-    "panorama": "360-12.jpg"
-},
-
-"scene13": {
-    "title": "MUA THU 1",
-    "type": "equirectangular",
-    "panorama": "360-13.jpg"
-},
-
-"scene14": {
-    "title": "SKY 1",
-    "type": "equirectangular",
-    "panorama": "360-14.jpg"
-},
-
-"scene15": {
-    "title": "SKY 2",
-    "type": "equirectangular",
-    "panorama": "360-15.jpg"
+        "title": "MUA XUAN 2",
+        "type": "equirectangular",
+        "panorama": "360-12.jpg"
+    },
+    "scene13": {
+        "title": "MUA XUAN 3",
+        "type": "equirectangular",
+        "panorama": "360-13.jpg"
+    },
+    "scene14": {
+        "title": "RUNG MAI",
+        "type": "equirectangular",
+        "panorama": "360-14.jpg"
+    },
+    "scene15": {
+        "title": "BT DAO 1",
+        "type": "equirectangular",
+        "panorama": "360-15.jpg"
+    },
+    "scene16": {
+        "title": "BT DAO 2",
+        "type": "equirectangular",
+        "panorama": "360-16.jpg"
+    },
+    "scene17": {
+        "title": "DAO VS RUNG",
+        "type": "equirectangular",
+        "panorama": "360-17.jpg"
+    },
+    "scene18": {
+        "title": "BT RUNG",
+        "type": "equirectangular",
+        "panorama": "360-18.jpg"
+    },
+    "scene19": {
+        "title": "HO THIEN NGA 1",
+        "type": "equirectangular",
+        "panorama": "360-19.jpg"
+    },
+    "scene20": {
+        "title": "HO THIEN NGA 2",
+        "type": "equirectangular",
+        "panorama": "360-20.jpg"
+    },
+    "scene21": {
+        "title": "HO THIEN NGA 3",
+        "type": "equirectangular",
+        "panorama": "360-21.jpg"
+    },
+    "scene22": {
+        "title": "2 TOA CHUA BAN",
+        "type": "equirectangular",
+        "panorama": "360-22.jpg"
+    },
+    "scene23": {
+        "title": "ECO BAZAAR 1",
+        "type": "equirectangular",
+        "panorama": "360-23.jpg"
+    },
+    "scene24": {
+        "title": "ECO BAZAAR 2",
+        "type": "equirectangular",
+        "panorama": "360-24.jpg"
+    },
+     "scene25": {
+        "title": "CONG VAO",
+        "type": "equirectangular",
+        "panorama": "360-25.jpg"
+    },
+    "scene26": {
+        "title": "ECO RETREAT VS THANH PHU",
+        "type": "equirectangular",
+        "panorama": "360-26.jpg"
 }
 }
 });
