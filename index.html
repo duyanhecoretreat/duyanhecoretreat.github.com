@@ -73,7 +73,19 @@ html, body {
     border-bottom: 1px solid rgba(255,255,255,0.25);
     white-space: nowrap;
 }
-
+#brandName {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    white-space: nowrap;
+}
 </style>
 </head>
 
@@ -81,8 +93,9 @@ html, body {
 
 <div id="panorama"></div>
 
+<div id="brandName">DUY ANH ECO RETREAT</div>
+
 <button id="locationBtn" onclick="toggleMenu()">
-    Duy Anh Eco_Retreat
     ☰ MENU PHÂN KHU
 </button>
 <div id="locationMenu">
