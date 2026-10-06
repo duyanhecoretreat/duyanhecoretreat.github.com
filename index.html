@@ -14,6 +14,7 @@ src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js">
 </script>
 
 <style>
+
 html, body {
     margin: 0;
     width: 100%;
@@ -27,12 +28,12 @@ html, body {
     height: 100%;
 }
 
-/* Làm ảnh sáng hơn */
+/* TĂNG SÁNG ẢNH */
 .pnlm-render-container {
-    filter: brightness(1.15);
+    filter: brightness(1.12);
 }
 
-/* TÊN THƯƠNG HIỆU */
+/* TÊN DUY ANH */
 #brand {
     position: fixed;
     top: 18px;
@@ -40,19 +41,18 @@ html, body {
     transform: translateX(-50%);
     z-index: 9999;
 
-    color: #ffd76a;
-    font-size: 27px;
+    color: #ffd54f;
+    font-size: 28px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
 
     text-shadow:
         -1px -1px 0 #000,
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000,
-         0 2px 5px #000;
-
-    white-space: nowrap;
+         0px 3px 6px #000;
 }
 
 /* NÚT MENU */
@@ -62,13 +62,13 @@ html, body {
     left: 20px;
     z-index: 9999;
 
-    background: rgba(0,0,0,.75);
+    background: rgba(0,0,0,0.78);
     color: white;
 
-    border: 1px solid rgba(255,255,255,.5);
+    border: 1px solid rgba(255,255,255,0.45);
     border-radius: 7px;
 
-    padding: 11px 15px;
+    padding: 12px 15px;
 
     font-size: 15px;
     font-weight: bold;
@@ -84,27 +84,27 @@ html, body {
     top: 70px;
     left: 20px;
 
-    width: 265px;
-    max-height: 72vh;
+    width: 285px;
+    max-height: 78vh;
 
     overflow-y: auto;
 
-    z-index: 9999;
-
-    background: rgba(0,0,0,.82);
+    background: rgba(0,0,0,0.86);
 
     border-radius: 8px;
 
-    box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    box-shadow: 0 5px 25px rgba(0,0,0,.45);
+
+    z-index: 9999;
 }
 
-/* NÚT TƯ VẤN */
+/* TƯ VẤN */
 #phone {
     display: block;
 
-    padding: 15px 13px;
+    padding: 15px;
 
-    color: #ffd76a;
+    color: #ffd54f;
 
     font-size: 18px;
     font-weight: bold;
@@ -117,31 +117,49 @@ html, body {
     white-space: nowrap;
 }
 
-/* CÁC ĐIỂM 360 */
-.scene {
-    padding: 12px 13px;
+/* TIÊU ĐỀ NHÓM */
+.group {
+    padding: 10px 13px 7px;
 
-    color: white;
+    color: #ffd54f;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    background: rgba(255,255,255,.08);
 
     border-bottom:
     1px solid rgba(255,255,255,.15);
+}
+
+/* ĐIỂM 360 */
+.scene {
+    padding: 11px 13px;
+
+    color: white;
+
+    font-size: 14px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.12);
 
     cursor: pointer;
-
-    font-size: 15px;
 }
 
 .scene:hover {
     background: rgba(255,255,255,.18);
 }
 
-.sceneNumber {
-    color: #ffd76a;
+.number {
+    display: inline-block;
+    width: 28px;
+
+    color: #ffd54f;
+
     font-weight: bold;
-    margin-right: 7px;
 }
 
-/* TÊN ĐIỂM HIỆN TẠI */
+/* TÊN VỊ TRÍ ĐANG XEM */
 #sceneTitle {
     position: fixed;
 
@@ -152,7 +170,7 @@ html, body {
 
     z-index: 9999;
 
-    background: rgba(0,0,0,.65);
+    background: rgba(0,0,0,.68);
 
     color: white;
 
@@ -161,31 +179,35 @@ html, body {
     border-radius: 20px;
 
     font-size: 15px;
+    font-weight: bold;
 
     white-space: nowrap;
 }
 
-/* Fullscreen xuống thấp một chút */
+/* FULL SCREEN */
 .pnlm-fullscreen-toggle-button {
     top: 100px !important;
 }
 
+/* ĐIỆN THOẠI */
 @media(max-width:600px) {
 
     #brand {
-        top: 20px;
+        top: 18px;
         font-size: 18px;
     }
 
     #menuBtn {
-        top: 60px;
+        top: 58px;
         left: 10px;
     }
 
     #menu {
-        top: 110px;
+        top: 108px;
         left: 10px;
-        width: 250px;
+
+        width: 270px;
+        max-height: 70vh;
     }
 
     #sceneTitle {
@@ -193,20 +215,25 @@ html, body {
         font-size: 13px;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div id="panorama"></div>
 
+
 <div id="brand">
-    DUY ANH ECO RETREAT
+DUY ANH ECO RETREAT
 </div>
+
 
 <button id="menuBtn" onclick="toggleMenu()">
 ☰ MENU PHÂN KHU
 </button>
+
 
 <div id="menu">
 
@@ -214,129 +241,245 @@ html, body {
 ☎ TƯ VẤN 0912 326 084
 </a>
 
-<div class="scene" onclick="goScene('scene1')"><span class="sceneNumber">01</span>NHÀ MẪU</div>
-<div class="scene" onclick="goScene('scene2')"><span class="sceneNumber">02</span>ONSEN & RỪNG PHƯỢNG</div>
-<div class="scene" onclick="goScene('scene3')"><span class="sceneNumber">03</span>MÙA THU 1</div>
-<div class="scene" onclick="goScene('scene4')"><span class="sceneNumber">04</span>MÙA THU 2</div>
-<div class="scene" onclick="goScene('scene5')"><span class="sceneNumber">05</span>MÙA THU 3</div>
-<div class="scene" onclick="goScene('scene6')"><span class="sceneNumber">06</span>MÙA THU - MÙA HẠ</div>
-<div class="scene" onclick="goScene('scene7')"><span class="sceneNumber">07</span>MÙA HẠ 1</div>
-<div class="scene" onclick="goScene('scene8')"><span class="sceneNumber">08</span>MÙA HẠ 2</div>
-<div class="scene" onclick="goScene('scene9')"><span class="sceneNumber">09</span>SKY RETREAT 1</div>
-<div class="scene" onclick="goScene('scene10')"><span class="sceneNumber">10</span>SKY RETREAT 2</div>
-<div class="scene" onclick="goScene('scene11')"><span class="sceneNumber">11</span>ĐIỂM 11</div>
-<div class="scene" onclick="goScene('scene12')"><span class="sceneNumber">12</span>ĐIỂM 12</div>
-<div class="scene" onclick="goScene('scene13')"><span class="sceneNumber">13</span>ĐIỂM 13</div>
-<div class="scene" onclick="goScene('scene14')"><span class="sceneNumber">14</span>ĐIỂM 14</div>
-<div class="scene" onclick="goScene('scene15')"><span class="sceneNumber">15</span>ĐIỂM 15</div>
-<div class="scene" onclick="goScene('scene16')"><span class="sceneNumber">16</span>ĐIỂM 16</div>
-<div class="scene" onclick="goScene('scene17')"><span class="sceneNumber">17</span>ĐIỂM 17</div>
-<div class="scene" onclick="goScene('scene18')"><span class="sceneNumber">18</span>ĐIỂM 18</div>
-<div class="scene" onclick="goScene('scene19')"><span class="sceneNumber">19</span>ĐIỂM 19</div>
-<div class="scene" onclick="goScene('scene20')"><span class="sceneNumber">20</span>ĐIỂM 20</div>
-<div class="scene" onclick="goScene('scene21')"><span class="sceneNumber">21</span>ĐIỂM 21</div>
-<div class="scene" onclick="goScene('scene22')"><span class="sceneNumber">22</span>ĐIỂM 22</div>
-<div class="scene" onclick="goScene('scene23')"><span class="sceneNumber">23</span>ĐIỂM 23</div>
-<div class="scene" onclick="goScene('scene24')"><span class="sceneNumber">24</span>ĐIỂM 24</div>
-<div class="scene" onclick="goScene('scene25')"><span class="sceneNumber">25</span>ĐIỂM 25</div>
-<div class="scene" onclick="goScene('scene26')"><span class="sceneNumber">26</span>ĐIỂM 26</div>
+
+<div class="group">NHÀ MẪU - ONSEN</div>
+
+<div class="scene" onclick="goScene(1)">
+<span class="number">01</span> NHÀ MẪU
+</div>
+
+<div class="scene" onclick="goScene(2)">
+<span class="number">02</span> ONSEN VÀ RỪNG PHƯỢNG
+</div>
+
+
+<div class="group">MÙA THU</div>
+
+<div class="scene" onclick="goScene(3)">
+<span class="number">03</span> MÙA THU 1
+</div>
+
+<div class="scene" onclick="goScene(4)">
+<span class="number">04</span> MÙA THU 2
+</div>
+
+<div class="scene" onclick="goScene(5)">
+<span class="number">05</span> MÙA THU 3
+</div>
+
+
+<div class="group">MÙA HẠ</div>
+
+<div class="scene" onclick="goScene(6)">
+<span class="number">06</span> GIỮA MÙA THU & MÙA HẠ
+</div>
+
+<div class="scene" onclick="goScene(7)">
+<span class="number">07</span> MÙA HẠ 1
+</div>
+
+<div class="scene" onclick="goScene(8)">
+<span class="number">08</span> MÙA HẠ 2
+</div>
+
+
+<div class="group">SKY RETREAT</div>
+
+<div class="scene" onclick="goScene(9)">
+<span class="number">09</span> SKY TRƯỚC
+</div>
+
+<div class="scene" onclick="goScene(10)">
+<span class="number">10</span> SKY SAU
+</div>
+
+
+<div class="group">MÙA XUÂN</div>
+
+<div class="scene" onclick="goScene(11)">
+<span class="number">11</span> MÙA XUÂN 1
+</div>
+
+<div class="scene" onclick="goScene(12)">
+<span class="number">12</span> MÙA XUÂN 2
+</div>
+
+<div class="scene" onclick="goScene(13)">
+<span class="number">13</span> MÙA XUÂN 3
+</div>
+
+
+<div class="group">RỪNG MAI - BIỆT THỰ ĐẢO</div>
+
+<div class="scene" onclick="goScene(14)">
+<span class="number">14</span> RỪNG MAI
+</div>
+
+<div class="scene" onclick="goScene(15)">
+<span class="number">15</span> BIỆT THỰ ĐẢO 1
+</div>
+
+<div class="scene" onclick="goScene(16)">
+<span class="number">16</span> BIỆT THỰ ĐẢO 2
+</div>
+
+<div class="scene" onclick="goScene(17)">
+<span class="number">17</span> ĐẢO & RỪNG
+</div>
+
+<div class="scene" onclick="goScene(18)">
+<span class="number">18</span> BIỆT THỰ RỪNG
+</div>
+
+
+<div class="group">HỒ THIÊN NGA</div>
+
+<div class="scene" onclick="goScene(19)">
+<span class="number">19</span> HỒ THIÊN NGA 1
+</div>
+
+<div class="scene" onclick="goScene(20)">
+<span class="number">20</span> HỒ THIÊN NGA 2
+</div>
+
+<div class="scene" onclick="goScene(21)">
+<span class="number">21</span> HỒ THIÊN NGA 3
+</div>
+
+
+<div class="group">KHU CAO TẦNG</div>
+
+<div class="scene" onclick="goScene(22)">
+<span class="number">22</span> 2 TÒA CHƯA BÁN
+</div>
+
+
+<div class="group">ECO BAZAAR</div>
+<div class="scene" onclick="goScene(23)">
+<span class="number">23</span> ECO BAZAAR 1
+</div>
+
+<div class="scene" onclick="goScene(24)">
+<span class="number">24</span> ECO BAZAAR 2
+</div>
+
+
+<div class="group">CỔNG VÀO - TOÀN CẢNH</div>
+
+<div class="scene" onclick="goScene(25)">
+<span class="number">25</span> CỔNG VÀO
+</div>
+
+<div class="scene" onclick="goScene(26)">
+<span class="number">26</span> ECO RETREAT & THANH PHÚ
+</div>
 
 </div>
+
 
 <div id="sceneTitle">
 NHÀ MẪU
 </div>
 
+
 <script>
 
 const names = [
-"",
-"NHÀ MẪU",
-"ONSEN & RỪNG PHƯỢNG",
-"MÙA THU 1",
-"MÙA THU 2",
-"MÙA THU 3",
-"MÙA THU - MÙA HẠ",
-"MÙA HẠ 1",
-"MÙA HẠ 2",
-"SKY RETREAT 1",
-"SKY RETREAT 2",
-"ĐIỂM 11",
-"ĐIỂM 12",
-"ĐIỂM 13",
-"ĐIỂM 14",
-"ĐIỂM 15",
-"ĐIỂM 16",
-"ĐIỂM 17",
-"ĐIỂM 18",
-"ĐIỂM 19",
-"ĐIỂM 20",
-"ĐIỂM 21",
-"ĐIỂM 22",
-"ĐIỂM 23",
-"ĐIỂM 24",
-"ĐIỂM 25",
-"ĐIỂM 26"
+    "",
+    "NHÀ MẪU",
+    "ONSEN VÀ RỪNG PHƯỢNG",
+    "MÙA THU 1",
+    "MÙA THU 2",
+    "MÙA THU 3",
+    "GIỮA MÙA THU & MÙA HẠ",
+    "MÙA HẠ 1",
+    "MÙA HẠ 2",
+    "SKY TRƯỚC",
+    "SKY SAU",
+    "MÙA XUÂN 1",
+    "MÙA XUÂN 2",
+    "MÙA XUÂN 3",
+    "RỪNG MAI",
+    "BIỆT THỰ ĐẢO 1",
+    "BIỆT THỰ ĐẢO 2",
+    "ĐẢO & RỪNG",
+    "BIỆT THỰ RỪNG",
+    "HỒ THIÊN NGA 1",
+    "HỒ THIÊN NGA 2",
+    "HỒ THIÊN NGA 3",
+    "2 TÒA CHƯA BÁN",
+    "ECO BAZAAR 1",
+    "ECO BAZAAR 2",
+    "CỔNG VÀO",
+    "ECO RETREAT & THANH PHÚ"
 ];
+
 
 const scenes = {};
 
-for(let i = 1; i <= 26; i++){
 
-    let number =
-        String(i).padStart(2,"0");
+for (let i = 1; i <= 26; i++) {
 
-    scenes["scene"+i] = {
+    const number =
+        String(i).padStart(2, "0");
+
+    scenes["scene" + i] = {
 
         title: names[i],
 
         type: "equirectangular",
 
-        panorama:
-        "./360-" + number + ".jpg",
+        panorama: "./360-" + number + ".jpg",
 
         hfov: 110
     };
 }
 
-const viewer =
-pannellum.viewer(
-"panorama",
-{
-    default: {
 
-        firstScene: "scene1",
+const viewer = pannellum.viewer(
+    "panorama",
+    {
 
-        autoLoad: true,
+        default: {
 
-        autoRotate: -2,
+            firstScene: "scene1",
 
-        sceneFadeDuration: 700
-    },
+            autoLoad: true,
 
-    scenes: scenes
-});
+            autoRotate: -2,
 
-function toggleMenu(){
+            autoRotateInactivityDelay: 3000,
+
+            sceneFadeDuration: 700,
+
+            showControls: true
+        },
+
+        scenes: scenes
+    }
+);
+
+
+function toggleMenu() {
 
     const menu =
-    document.getElementById("menu");
+        document.getElementById("menu");
 
-    if(menu.style.display === "block"){
+    if (menu.style.display === "block") {
+
         menu.style.display = "none";
-    }
-    else{
+
+    } else {
+
         menu.style.display = "block";
     }
 }
 
-function goScene(scene){
 
-    viewer.loadScene(scene);
+function goScene(number) {
 
-    const number =
-    parseInt(
-        scene.replace("scene","")
+    viewer.loadScene(
+        "scene" + number
     );
 
     document.getElementById(
@@ -347,6 +490,26 @@ function goScene(scene){
         "menu"
     ).style.display = "none";
 }
+
+
+/* CẬP NHẬT TÊN KHI ĐỔI SCENE */
+viewer.on(
+    "scenechange",
+    function(sceneId) {
+
+        const number =
+            parseInt(
+                sceneId.replace("scene","")
+            );
+
+        if (names[number]) {
+
+            document.getElementById(
+                "sceneTitle"
+            ).innerText = names[number];
+        }
+    }
+);
 
 </script>
 
