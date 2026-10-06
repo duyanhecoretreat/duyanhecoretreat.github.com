@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eco Retreat 360°</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
-<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<title>Duy Anh Eco Retreat 360°</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+
+<script
+src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js">
+</script>
 
 <style>
 html, body {
@@ -21,61 +26,172 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+/* Làm ảnh sáng hơn */
 .pnlm-render-container {
-    filter: brightness(1.30);
-}
-#locationBtn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 9999;
-    background: rgba(0,0,0,0.75);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.5);
-    padding: 12px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    filter: brightness(1.15);
 }
 
-#locationMenu {
-    display: none;
+/* TÊN THƯƠNG HIỆU */
+#brand {
     position: fixed;
-    top: 70px;
-    left: 20px;
-    z-index: 9999;
-    width: 240px;
-    max-height: 70vh;
-    overflow-y: auto;
-    background: rgba(0,0,0,0.88);
-    border-radius: 10px;
-    padding: 8px;
-}
-
-.locationItem {
-    color: white;
-    padding: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    cursor: pointer;
-}
-
-.locationItem:hover {
-    background: rgba(255,255,255,0.15);
-}
- 
-#brandName {
-    position: fixed;
-    top: 20px;
+    top: 18px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
-    color: #F4D06F;
-    font-size: 32px;
-    font-weight: bold;
-    -webkit-text-stroke: 1px black;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+
+    color: #ffd76a;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0 2px 5px #000;
+
     white-space: nowrap;
+}
+
+/* NÚT MENU */
+#menuBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+
+    background: rgba(0,0,0,.75);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 7px;
+
+    padding: 11px 15px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* MENU */
+#menu {
+    display: none;
+
+    position: fixed;
+    top: 70px;
+    left: 20px;
+
+    width: 265px;
+    max-height: 72vh;
+
+    overflow-y: auto;
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,.82);
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
+/* NÚT TƯ VẤN */
+#phone {
+    display: block;
+
+    padding: 15px 13px;
+
+    color: #ffd76a;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.25);
+
+    white-space: nowrap;
+}
+
+/* CÁC ĐIỂM 360 */
+.scene {
+    padding: 12px 13px;
+
+    color: white;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.15);
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.scene:hover {
+    background: rgba(255,255,255,.18);
+}
+
+.sceneNumber {
+    color: #ffd76a;
+    font-weight: bold;
+    margin-right: 7px;
+}
+
+/* TÊN ĐIỂM HIỆN TẠI */
+#sceneTitle {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,.65);
+
+    color: white;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+}
+
+/* Fullscreen xuống thấp một chút */
+.pnlm-fullscreen-toggle-button {
+    top: 100px !important;
+}
+
+@media(max-width:600px) {
+
+    #brand {
+        top: 20px;
+        font-size: 18px;
+    }
+
+    #menuBtn {
+        top: 60px;
+        left: 10px;
+    }
+
+    #menu {
+        top: 110px;
+        left: 10px;
+        width: 250px;
+    }
+
+    #sceneTitle {
+        bottom: 15px;
+        font-size: 13px;
+    }
 }
 </style>
 </head>
@@ -84,213 +200,152 @@ html, body {
 
 <div id="panorama"></div>
 
-<div id="brandName">360_DUY ANH ECO RETREAT</div>
+<div id="brand">
+    DUY ANH ECO RETREAT
+</div>
 
-<button id="locationBtn" onclick="toggleMenu()">
-    ☰ MENU PHÂN KHU
+<button id="menuBtn" onclick="toggleMenu()">
+☰ MENU PHÂN KHU
 </button>
-<div id="locationMenu">
-   <div class="locationGroup">NHA MAU - ONSEN</div>
-   <div class="locationItem" onclick="goTo('scene1')">NHA MAU</div>
-   <div class="locationItem" onclick="goTo('scene2')">ONSEN VA RUNG PHUONG</div>
 
-   <div class="locationGroup">MUA THU</div>
-   <div class="locationItem" onclick="goTo('scene3')">MUA THU 1</div>
-   <div class="locationItem" onclick="goTo('scene4')">MUA THU 2</div>
-   <div class="locationItem" onclick="goTo('scene5')">MUA THU 3</div>
+<div id="menu">
 
-   <div class="locationGroup">MUA HA</div>
-   <div class="locationItem" onclick="goTo('scene6')">GIUA MUA THU VS MUA HA</div>
-   <div class="locationItem" onclick="goTo('scene7')">MUA HA 1</div>
-   <div class="locationItem" onclick="goTo('scene8')">MUA HA 2</div>
+<a id="phone" href="tel:0912326084">
+☎ TƯ VẤN 0912 326 084
+</a>
 
-   <div class="locationGroup">SKY RETREAT</div>
-   <div class="locationItem" onclick="goTo('scene9')">SKY TRUOC</div>
-   <div class="locationItem" onclick="goTo('scene10')">SKY SAU</div>
+<div class="scene" onclick="goScene('scene1')"><span class="sceneNumber">01</span>NHÀ MẪU</div>
+<div class="scene" onclick="goScene('scene2')"><span class="sceneNumber">02</span>ONSEN & RỪNG PHƯỢNG</div>
+<div class="scene" onclick="goScene('scene3')"><span class="sceneNumber">03</span>MÙA THU 1</div>
+<div class="scene" onclick="goScene('scene4')"><span class="sceneNumber">04</span>MÙA THU 2</div>
+<div class="scene" onclick="goScene('scene5')"><span class="sceneNumber">05</span>MÙA THU 3</div>
+<div class="scene" onclick="goScene('scene6')"><span class="sceneNumber">06</span>MÙA THU - MÙA HẠ</div>
+<div class="scene" onclick="goScene('scene7')"><span class="sceneNumber">07</span>MÙA HẠ 1</div>
+<div class="scene" onclick="goScene('scene8')"><span class="sceneNumber">08</span>MÙA HẠ 2</div>
+<div class="scene" onclick="goScene('scene9')"><span class="sceneNumber">09</span>SKY RETREAT 1</div>
+<div class="scene" onclick="goScene('scene10')"><span class="sceneNumber">10</span>SKY RETREAT 2</div>
+<div class="scene" onclick="goScene('scene11')"><span class="sceneNumber">11</span>ĐIỂM 11</div>
+<div class="scene" onclick="goScene('scene12')"><span class="sceneNumber">12</span>ĐIỂM 12</div>
+<div class="scene" onclick="goScene('scene13')"><span class="sceneNumber">13</span>ĐIỂM 13</div>
+<div class="scene" onclick="goScene('scene14')"><span class="sceneNumber">14</span>ĐIỂM 14</div>
+<div class="scene" onclick="goScene('scene15')"><span class="sceneNumber">15</span>ĐIỂM 15</div>
+<div class="scene" onclick="goScene('scene16')"><span class="sceneNumber">16</span>ĐIỂM 16</div>
+<div class="scene" onclick="goScene('scene17')"><span class="sceneNumber">17</span>ĐIỂM 17</div>
+<div class="scene" onclick="goScene('scene18')"><span class="sceneNumber">18</span>ĐIỂM 18</div>
+<div class="scene" onclick="goScene('scene19')"><span class="sceneNumber">19</span>ĐIỂM 19</div>
+<div class="scene" onclick="goScene('scene20')"><span class="sceneNumber">20</span>ĐIỂM 20</div>
+<div class="scene" onclick="goScene('scene21')"><span class="sceneNumber">21</span>ĐIỂM 21</div>
+<div class="scene" onclick="goScene('scene22')"><span class="sceneNumber">22</span>ĐIỂM 22</div>
+<div class="scene" onclick="goScene('scene23')"><span class="sceneNumber">23</span>ĐIỂM 23</div>
+<div class="scene" onclick="goScene('scene24')"><span class="sceneNumber">24</span>ĐIỂM 24</div>
+<div class="scene" onclick="goScene('scene25')"><span class="sceneNumber">25</span>ĐIỂM 25</div>
+<div class="scene" onclick="goScene('scene26')"><span class="sceneNumber">26</span>ĐIỂM 26</div>
 
-   <div class="locationGroup">MUA XUAN</div>
-   <div class="locationItem" onclick="goTo('scene11')">MUA XUAN 1</div>
-   <div class="locationItem" onclick="goTo('scene12')">MUA XUAN 2</div>
-   <div class="locationItem" onclick="goTo('scene13')">MUA XUAN 3</div>
+</div>
 
-   <div class="locationGroup">RUNG - BIET THU DAO</div>
-   <div class="locationItem" onclick="goTo('scene14')">RUNG MAI</div>
-   <div class="locationItem" onclick="goTo('scene15')">BT DAO 1</div>
-   <div class="locationItem" onclick="goTo('scene16')">BT DAO 2</div>
-   <div class="locationItem" onclick="goTo('scene17')">DAO VS RUNG</div>
-   <div class="locationItem" onclick="goTo('scene18')">BT RUNG</div>
-
-   <div class="locationGroup">HO THIEN NGA</div>
-   <div class="locationItem" onclick="goTo('scene19')">HO THIEN NGA 1</div>
-   <div class="locationItem" onclick="goTo('scene20')">HO THIEN NGA 2</div>
-   <div class="locationItem" onclick="goTo('scene21')">HO THIEN NGA 3</div>
-
-   <div class="locationGroup">ECO BAZAAR - CONG VAO</div>
-   <div class="locationItem" onclick="goTo('scene22')">2 TOA CHUA BAN</div>
-   <div class="locationItem" onclick="goTo('scene23')">ECO BAZAAR 1</div>
-   <div class="locationItem" onclick="goTo('scene24')">ECO BAZAAR 2</div>
-   <div class="locationItem" onclick="goTo('scene25')">CONG VAO</div>
-   <div class="locationItem" onclick="goTo('scene26')">ECO RETREAT VS THANH PHU</div>
+<div id="sceneTitle">
+NHÀ MẪU
 </div>
 
 <script>
 
-const viewer = pannellum.viewer('panorama', {
+const names = [
+"",
+"NHÀ MẪU",
+"ONSEN & RỪNG PHƯỢNG",
+"MÙA THU 1",
+"MÙA THU 2",
+"MÙA THU 3",
+"MÙA THU - MÙA HẠ",
+"MÙA HẠ 1",
+"MÙA HẠ 2",
+"SKY RETREAT 1",
+"SKY RETREAT 2",
+"ĐIỂM 11",
+"ĐIỂM 12",
+"ĐIỂM 13",
+"ĐIỂM 14",
+"ĐIỂM 15",
+"ĐIỂM 16",
+"ĐIỂM 17",
+"ĐIỂM 18",
+"ĐIỂM 19",
+"ĐIỂM 20",
+"ĐIỂM 21",
+"ĐIỂM 22",
+"ĐIỂM 23",
+"ĐIỂM 24",
+"ĐIỂM 25",
+"ĐIỂM 26"
+];
 
-"default": {
-    "firstScene": "scene1",
-    "autoLoad": true,
-    "autoRotate": -2,
-    "sceneFadeDuration": 700
-},
+const scenes = {};
 
-"scenes": {
-    "scene1": {
-        "title": "NHA MAU",
-        "type": "equirectangular",
-        "panorama": "360-01.jpg"
-    },
-    "scene2": {
-        "title": "ONSEN VA RUNG PHUONG",
-        "type": "equirectangular",
-        "panorama": "360-02.jpg"
-    },
-    "scene3": {
-        "title": "MUA THU 1",
-        "type": "equirectangular",
-        "panorama": "360-03.jpg"
-    },
-    "scene4": {
-        "title": "MUA THU 2",
-        "type": "equirectangular",
-        "panorama": "360-04.jpg"
-    },
-    "scene5": {
-        "title": "MUA THU 3",
-        "type": "equirectangular",
-        "panorama": "360-05.jpg"
-    },
-    "scene6": {
-        "title": "GIUA MUA THU VS MUA HA",
-        "type": "equirectangular",
-        "panorama": "360-06.jpg"
-    },
-    "scene7": {
-        "title": "MUA HA 1",
-        "type": "equirectangular",
-        "panorama": "360-07.jpg"
-    },
-    "scene8": {
-        "title": "MUA HA 2",
-        "type": "equirectangular",
-        "panorama": "360-08.jpg"
-    },
-    "scene9": {
-        "title": "SKY TRUOC",
-        "type": "equirectangular",
-        "panorama": "360-09.jpg"
-    },
-    "scene10": {
-        "title": "SKY SAU",
-        "type": "equirectangular",
-        "panorama": "360-10.jpg"
-    },
-    "scene11": {
-        "title": "MUA XUAN 1",
-        "type": "equirectangular",
-        "panorama": "360-11.jpg"
-    },
-    "scene12": {
-        "title": "MUA XUAN 2",
-        "type": "equirectangular",
-        "panorama": "360-12.jpg"
-    },
-    "scene13": {
-        "title": "MUA XUAN 3",
-        "type": "equirectangular",
-        "panorama": "360-13.jpg"
-    },
-    "scene14": {
-        "title": "RUNG MAI",
-        "type": "equirectangular",
-        "panorama": "360-14.jpg"
-    },
-    "scene15": {
-        "title": "BT DAO 1",
-        "type": "equirectangular",
-        "panorama": "360-15.jpg"
-    },
-    "scene16": {
-        "title": "BT DAO 2",
-        "type": "equirectangular",
-        "panorama": "360-16.jpg"
-    },
-    "scene17": {
-        "title": "DAO VS RUNG",
-        "type": "equirectangular",
-        "panorama": "360-17.jpg"
-    },
-    "scene18": {
-        "title": "BT RUNG",
-        "type": "equirectangular",
-        "panorama": "360-18.jpg"
-    },
-    "scene19": {
-        "title": "HO THIEN NGA 1",
-        "type": "equirectangular",
-        "panorama": "360-19.jpg"
-    },
-    "scene20": {
-        "title": "HO THIEN NGA 2",
-        "type": "equirectangular",
-        "panorama": "360-20.jpg"
-    },
-    "scene21": {
-        "title": "HO THIEN NGA 3",
-        "type": "equirectangular",
-        "panorama": "360-21.jpg"
-    },
-    "scene22": {
-        "title": "2 TOA CHUA BAN",
-        "type": "equirectangular",
-        "panorama": "360-22.jpg"
-    },
-    "scene23": {
-        "title": "ECO BAZAAR 1",
-        "type": "equirectangular",
-        "panorama": "360-23.jpg"
-    },
-    "scene24": {
-        "title": "ECO BAZAAR 2",
-        "type": "equirectangular",
-        "panorama": "360-24.jpg"
-    },
-     "scene25": {
-        "title": "CONG VAO",
-        "type": "equirectangular",
-        "panorama": "360-25.jpg"
-    },
-    "scene26": {
-        "title": "ECO RETREAT VS THANH PHU",
-        "type": "equirectangular",
-        "panorama": "360-26.jpg"
+for(let i = 1; i <= 26; i++){
+
+    let number =
+        String(i).padStart(2,"0");
+
+    scenes["scene"+i] = {
+
+        title: names[i],
+
+        type: "equirectangular",
+
+        panorama:
+        "./360-" + number + ".jpg",
+
+        hfov: 110
+    };
 }
-}
+
+const viewer =
+pannellum.viewer(
+"panorama",
+{
+    default: {
+
+        firstScene: "scene1",
+
+        autoLoad: true,
+
+        autoRotate: -2,
+
+        sceneFadeDuration: 700
+    },
+
+    scenes: scenes
 });
 
-function toggleMenu() {
-    const menu = document.getElementById("locationMenu");
+function toggleMenu(){
 
-    if (menu.style.display === "block") {
+    const menu =
+    document.getElementById("menu");
+
+    if(menu.style.display === "block"){
         menu.style.display = "none";
-    } else {
+    }
+    else{
         menu.style.display = "block";
     }
 }
 
-function goTo(sceneId) {
-    viewer.loadScene(sceneId);
-    document.getElementById("locationMenu").style.display = "none";
+function goScene(scene){
+
+    viewer.loadScene(scene);
+
+    const number =
+    parseInt(
+        scene.replace("scene","")
+    );
+
+    document.getElementById(
+        "sceneTitle"
+    ).innerText = names[number];
+
+    document.getElementById(
+        "menu"
+    ).style.display = "none";
 }
 
 </script>
